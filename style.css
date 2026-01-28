@@ -1,0 +1,49 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+}
+
+main {
+  margin-left: 240px;
+}
+
+.card {
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #212529;
+  color: white;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.2s;
+}
+.sidebar a:hover {
+  background: #343a40;
+}
+.topbar {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 250px;
+}
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}

@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Categories</title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Lato';
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            src: url(../fonts/Lato/Lato-Regular.ttf);
+        }
+
+        .topbar {
+            background-color: #161b22;
+            padding: 15px 20px;
+            margin-left: 250px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #30363d;
+        }
+
+
+        .content {
+            margin-left: 250px;
+            padding: 50px;
+        }
+
+        .card {
+            background-color: #161b22 !important;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+        }
+
+        .table {
+            color: #c9d1d9;
+        }
+
+        .table-dark {
+            background-color: #21262d !important;
+        }
+
+        .btn-primary {
+            background-color: #238636;
+            border-color: #2ea043;
+        }
+
+        .btn-primary:hover {
+            background-color: #2ea043;
+        }
+
+        .btn-danger {
+            background-color: #da3633;
+            border-color: #f85149;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 0.2rem rgba(56, 139, 253, 0.3);
+            background-color: #0d1117;
+            color: #fff;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #161b22;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            border-right: 1px solid #30363d;
+        }
+
+        .sidebar a {
+            color: #c9d1d9;
+            padding: 12px 20px;
+            display: block;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+
+        .sidebar .active {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h4 class="text-center mb-4">Sadeesha Admin</h4>
+        <a href="../index.html"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+        <a href="stack_management.html"><i class="bi bi-bar-chart-line me-2"></i> Stack Management</a>
+        <a href="categories.html"><i class="bi bi-folder me-2"></i> Project Categories</a>
+        <a href="projects.html" class="active"><i class="bi bi-laptop me-2"></i> Projects</a>
+        
+    </div>
+
+
+<div class="content">
+
+    
+
+  <h2 class="text-center fw-bold text-info mb-4">Manage Categories</h2>
+
+  <!-- ADD CATEGORY -->
+  <div class="card shadow-sm mb-5 p-4">
+    <h5 class="text-info fw-semibold">Add New Category</h5>
+
+    <div class="row gy-3">
+      <div class="col-md-4">
+        <input type="text" id="catId" class="form-control" placeholder="Document ID (ex: frontend)" required>
+      </div>
+
+      <div class="col-md-4">
+        <input type="text" id="catName" class="form-control" placeholder="Category name" required>
+      </div>
+
+      <div class="col-md-2">
+        <input type="number" id="catOrder" class="form-control" placeholder="Order" required>
+      </div>
+
+      <div class="col-md-2">
+        <button onclick="addCategory()" class="btn btn-primary w-100">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY TABLE -->
+  <div class="card shadow-sm p-4 mb-5">
+    <h5 class="text-info fw-semibold">Existing Categories</h5>
+
+    <table class="table table-hover align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Order</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="categoryTable"></tbody>
+    </table>
+  </div>
+
+  <!-- EXPERIENCE SECTION -->
+  <div class="card shadow-sm p-4">
+    <h5 class="text-info fw-semibold">Experience</h5>
+
+    <div class="row gy-3">
+      <div class="col-md-6">
+        <label>Years of Experience</label>
+        <input type="number" id="years" class="form-control">
+      </div>
+
+      <div class="col-md-6">
+        <label>Total Projects</label>
+        <input type="number" id="projects" class="form-control">
+      </div>
+
+      <div class="col-md-12">
+        <button onclick="updateExperience()" class="btn btn-success w-100 mt-2">
+          Update Experience
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="../js/categories.js"></script>
+</body>
+</html>

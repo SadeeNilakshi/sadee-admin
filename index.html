@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Projects</title>
+  <link href="bootstrap.css" rel="stylesheet">
+
+</head>
+<style>
+  body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Lato';
+  }
+
+  @font-face {
+            font-family: 'Lato';
+            src: url(../fonts/Lato/Lato-Regular.ttf);
+        }
+
+  .dashboard-wrapper {
+      padding: 60px 20px;
+  }
+
+  .dashboard-title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+  .dashboard-subtitle {
+      text-align: center;
+      color: #8b949e;
+      margin-bottom: 45px;
+  }
+
+  .dashboard-cards-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row !important; /* FORCE single row */
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    overflow-x: auto;    /* enables scrolling on small screens */
+    padding-bottom: 15px;
+    
+}
+
+.dashboard-card {
+    min-width: 240px;    /* so cards keep shape */
+}
+
+  /* Card Styling */
+  .dashboard-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 14px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s ease;
+     height: 200px;
+      
+  }
+
+  .dashboard-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.25);
+  }
+
+  .dashboard-card .btn-custom {
+      background-color: #00bfff;
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      transition: 0.2s;
+  }
+
+  .dashboard-card .btn-custom:hover {
+      background-color: #0099cc;
+  }
+
+  
+        /* Topbar */
+        .topbar {
+            background: #111317;
+            padding: 15px 25px;
+            border-bottom: 1px solid #222;
+            color: #cfcfcf;
+        }
+
+        .topbar h5 {
+            color: #00d2ff;
+            font-weight: 600;
+        }
+</style>
+
+    <div class="topbar d-flex justify-content-between align-items-center">
+        <h5>Manage Projects</h5>
+        <div>
+            <span class="me-3">Hello, Admin</span>
+            <button class="btn btn-outline-light btn-sm"><i class="bi bi-box-arrow-right"></i> <a href="logout.php">Logout</a>
+            </button>
+        </div>
+    </div>
+
+<div class="container-fluid dashboard-wrapper">
+
+    <h2 class="dashboard-title">Admin Dashboard</h2>
+    <p class="dashboard-subtitle">Manage all your portfolio data here.</p>
+
+    <div class="dashboard-cards-container d-flex justify-content-center align-items-stretch gap-4 flex-row flex-nowrap h-100">
+
+
+        <!-- Projects -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="dashboard-card">
+                <h4 class="fw-bold mb-2">Projects</h4>
+                <p class="text-muted mb-3">Manage your projects</p>
+                <a href="pages/projects.html" class="btn-custom">Manage</a>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="dashboard-card">
+                <h4 class="fw-bold mb-2">Categories</h4>
+                <p class="text-muted mb-3">Organize by categories</p>
+                <a href="pages/categories.html" class="btn-custom">Manage</a>
+            </div>
+        </div>
+
+        <!-- Stacks -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="dashboard-card">
+                <h4 class="fw-bold mb-2">Stacks</h4>
+                <p class="text-muted mb-3">Manage skills</p>
+                <a href="pages/stack_management.html" class="btn-custom">Manage</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</html>
+
+
+
+

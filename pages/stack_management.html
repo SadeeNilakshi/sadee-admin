@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Management | Admin</title>
+
+    <link href="../bootstrap.css" rel="stylesheet">
+    <!-- <link href="../bootstrap-icons.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Lato';
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            src: url(../fonts/Lato/Lato-Regular.ttf);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #161b22;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding-top: 20px;
+            border-right: 1px solid #30363d;
+        }
+
+        .sidebar a {
+            color: #c9d1d9;
+            padding: 12px 20px;
+            display: block;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+
+        .sidebar .active {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+
+        .topbar {
+            background-color: #161b22;
+            padding: 15px 20px;
+            margin-left: 250px;
+            border-bottom: 1px solid #30363d;
+            color: #c9d1d9;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 50px;
+        }
+
+        .card {
+            background-color: #161b22 !important;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+        }
+
+        .table {
+            color: #c9d1d9;
+        }
+
+        .table-dark {
+            background-color: #21262d !important;
+        }
+
+        .btn-primary {
+            background-color: #238636;
+            border-color: #2ea043;
+        }
+
+        .btn-primary:hover {
+            background-color: #2ea043;
+        }
+
+        .btn-warning {
+            background-color: #e3b341;
+            border-color: #f1c453;
+            color: #000;
+        }
+
+        .btn-danger {
+            background-color: #da3633;
+            border-color: #f85149;
+        }
+
+        .form-control,
+        .form-select {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #58a6ff;
+            box-shadow: 0 0 0 0.2rem rgba(56, 139, 253, 0.3);
+            background-color: #0d1117;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+        <h4 class="text-center mb-4">Sadeesha Admin</h4>
+        <a href="../index.html"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+        <a href="stack_management.html"><i class="bi bi-bar-chart-line me-2"></i> Stack Management</a>
+        <a href="categories.html"><i class="bi bi-folder me-2"></i> Project Categories</a>
+        <a href="projects.html" class="active"><i class="bi bi-laptop me-2"></i> Projects</a>
+       
+    </div>
+
+<!-- Topbar -->
+<div class="topbar d-flex justify-content-between align-items-center">
+    <h5>Stack Management</h5>
+    <span>Hello, Admin</span>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+    <h2 class="text-center fw-bold text-info mb-4">Manage Your Skills</h2>
+
+   <!-- Upload CV -->
+<div class="card shadow-sm mb-5 p-4">
+  <h5 class="text-info">Upload CV (Google Drive PDF URL)</h5>
+
+  <input
+    type="url"
+    id="cvFile"
+    class="form-control mb-3"
+    placeholder="https://drive.google.com/file/d/XXXX/preview"
+  >
+
+  <button id="uploadCVBtn" class="btn btn-success fw-bold w-100">
+    Save CV
+  </button>
+</div>
+
+
+    <!-- Add Stack -->
+    <div class="card shadow-sm mb-5 p-4">
+        <h5 class="text-info">Add New Skill</h5>
+
+        <div class="row gy-3">
+            <div class="col-md-4">
+                <input type="text" id="stackName" class="form-control" placeholder="Skill name">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" id="percentage" class="form-control" placeholder="Percentage">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" id="order" class="form-control" placeholder="Order">
+            </div>
+
+            <div class="col-md-6">
+                <input type="file" id="iconFile" class="form-control" accept="image/*">
+            </div>
+
+            <div class="col-md-2">
+                <button id="addStackBtn" class="btn btn-primary w-100 fw-bold">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stack Table -->
+    <div class="card shadow-sm p-4">
+        <h5 class="text-info">Existing Skills</h5>
+
+        <table class="table table-hover align-middle">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>#</th>
+                    <th>Icon</th>
+                    <th>Skill</th>
+                    <th>Percentage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="stackTable"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script type="module" src="../js/stack_management.js"></script>
+</body>
+</html>
