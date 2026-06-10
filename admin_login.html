@@ -11,34 +11,50 @@
   <style>
     body {
       height: 100vh;
-      background: linear-gradient(135deg, #8f94fb, #4e54c8);
+      background: linear-gradient(135deg, #D946EF, #A855F7);
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .login-card {
-      background: #ffffff;
+      background: #13101F;
       padding: 35px;
       border-radius: 15px;
       width: 380px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.20);
+      box-shadow: 0 8px 25px rgba(217, 70, 239, 0.25);
       animation: fadeIn 0.8s ease;
+      border: 1px solid #2a1040;
     }
     .login-title {
       font-weight: 700;
       text-align: center;
-      color: #4e54c8;
+      color: #D946EF;
       margin-bottom: 15px;
     }
+    .form-label {
+      color: #F4ECFF;
+    }
+    .form-control {
+      background-color: #08060F;
+      border: 1px solid #2a1040;
+      color: #F4ECFF;
+    }
+    .form-control:focus {
+      background-color: #1a1030;
+      border-color: #D946EF;
+      box-shadow: 0 0 8px rgba(217, 70, 239, 0.3);
+      color: #F4ECFF;
+    }
     .btn-login {
-      background: #4e54c8;
+      background: linear-gradient(135deg, #D946EF, #A855F7);
       color: white;
       font-weight: 600;
       border-radius: 8px;
       width: 100%;
+      border: none;
     }
     .btn-login:hover {
-      background: #3b40a4;
+      background: linear-gradient(135deg, #A855F7, #9333EA);
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
